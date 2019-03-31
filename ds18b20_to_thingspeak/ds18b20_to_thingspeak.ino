@@ -2,23 +2,18 @@
 #include <ESP8266WiFi.h>
 #include <ESP8266WebServer.h>
 #include <DallasTemperature.h>
+#include <mylib.h>
 
 #define ONE_WIRE_BUS D3
 
 const char* host = "api.thingspeak.com";
-String ApiKey = "HS5RH2ALQMJPIQA7";
 String path = "/update?api_key=" + ApiKey + "&field1=";  
 
 const char* host_aws = "54.180.121.174";
 String path_aws = "/log?temperature=";  
 
-
 OneWire oneWire(ONE_WIRE_BUS);
 DallasTemperature DS18B20(&oneWire);
-//SO070VOIP3885, BEED403884
-const char* ssid = "SO070VOIP3885";
-const char* pass = "BEED403884";
-
 
 char temperatureString[6];
 
